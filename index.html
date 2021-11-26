@@ -14,8 +14,16 @@
 <p id="x">No Gyro found</p>
 <p id="y"></p>
 <p id="z"></p>
+<br>
+<button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
+
 <script>
-    window.ondevicemotion = function(event) {
+    function getAccel(){
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+            console.log("accelerometer permission granted");
+            // Do stuff here
+            window.ondevicemotion = function(event) {
         var ax = event.accelerationIncludingGravity.x;
         var ay = event.accelerationIncludingGravity.y;
         var az = event.accelerationIncludingGravity.z;
@@ -24,6 +32,9 @@
         document.querySelector('#y').innerHTML = "Y = " + ay;
         document.querySelector('#z').innerHTML = "Z = " + az;
     }
+        }
+    });
+}
 </script>
 
 <!-- <div id="container">
