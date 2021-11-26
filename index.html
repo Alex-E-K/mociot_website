@@ -10,7 +10,24 @@
 </head>
 <body>
 
-<div id="container">
+<br>
+<p id="x">No Gyro found</p>
+<p id="y"></p>
+<p id="z"></p>
+<script>
+    let gyroscope = new Gyroscope({frequency: 60});
+
+gyroscope.addEventListener('reading', e => {
+    var ax = gyroscope.x;
+    document.querySelector('#x').innerHTML = "X = " + ax
+  console.log("Angular velocity along the X-axis " + gyroscope.x);
+  console.log("Angular velocity along the Y-axis " + gyroscope.y);
+  console.log("Angular velocity along the Z-axis " + gyroscope.z);
+});
+gyroscope.start();
+</script>
+
+<!-- <div id="container">
 
     <div id="score_help"> Score:
       <span id="score">0</span> | Life:
@@ -39,7 +56,7 @@
   
     <button id="restart">Restart</button>
   
-  </div>
+  </div> -->
 
 
 </body>
