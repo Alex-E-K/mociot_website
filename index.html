@@ -15,16 +15,15 @@
 <p id="y"></p>
 <p id="z"></p>
 <script>
-    let gyroscope = new Gyroscope({frequency: 60});
+    window.ondevicemotion = function(event) {
+        var ax = event.accelerationIncludingGravity.x;
+        var ay = event.accelerationIncludingGravity.y;
+        var az = event.accelerationIncludingGravity.z;
 
-gyroscope.addEventListener('reading', e => {
-    var ax = gyroscope.x;
-    document.querySelector('#x').innerHTML = "X = " + ax;
-    console.log("Angular velocity along the X-axis " + gyroscope.x);
-    console.log("Angular velocity along the Y-axis " + gyroscope.y);
-    console.log("Angular velocity along the Z-axis " + gyroscope.z);
-});
-gyroscope.start();
+        document.querySelector('#x').innerHTML = "X = " + ax;
+        document.querySelector('#y').innerHTML = "Y = " + ay;
+        document.querySelector('#z').innerHTML = "Z = " + az;
+    }
 </script>
 
 <!-- <div id="container">
