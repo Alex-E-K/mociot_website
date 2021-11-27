@@ -1,21 +1,27 @@
 var OSName = "Unknown OS";
 
 function getOSName() {
-    if (navigator.userAgentData.platform.indexOf("Win") != -1) {
-        OSName = "Windows";
-    } else if (navigator.userAgentData.platform.indexOf("mac") != -1) {
-        OSName = "MacOS";
-    } else if (navigator.userAgentData.platform.indexOf("X11") != -1) {
-        OSName = "Unix";
-    } else if (navigator.userAgentData.platform.indexOf("Linux") != -1) {
-        OSName = "Linux";
-    } else if (navigator.userAgentData.platform.indexOf("iPhone") != -1 || navigator.userAgentData.platform.indexOf("iPad") != -1) {
-        OSName = "iOS";
-    } else if (navigator.userAgentData.platform.indexOf("Android") != -1) {
-        OSName = "Android";
-    }
+    var userAgent = window.navigator.userAgent,
+      platform = window.navigator.platform,
+      macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+      iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+      os = null;
 
-    document.getElementById("UA").innerText = OSName;
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    os = 'Mac OS';
+  } else if (iosPlatforms.indexOf(platform) !== -1) {
+    os = 'iOS';
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    os = 'Windows';
+  } else if (/Android/.test(userAgent)) {
+    os = 'Android';
+  } else if (!os && /Linux/.test(platform)) {
+    os = 'Linux';
+  }
+
+    document.getElementById("UA").innerText = os;
+    OSName = os;
 }
 
 $(function() {
