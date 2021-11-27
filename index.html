@@ -24,14 +24,14 @@
             console.log("accelerometer permission granted");
             // Do stuff here
             window.ondevicemotion = function(event) {
-        var ax = event.accelerationIncludingGravity.x;
-        var ay = event.accelerationIncludingGravity.y;
-        var az = event.accelerationIncludingGravity.z;
+                var ax = event.accelerationIncludingGravity.x;
+                var ay = event.accelerationIncludingGravity.y;
+                var az = event.accelerationIncludingGravity.z;
 
-        document.querySelector('#x').innerHTML = "X = " + ax;
-        document.querySelector('#y').innerHTML = "Y = " + ay;
-        document.querySelector('#z').innerHTML = "Z = " + az;
-    }
+                document.querySelector('#x').innerHTML = "X = " + ax;
+                document.querySelector('#y').innerHTML = "Y = " + navigator.userAgentData.platform;
+                document.querySelector('#z').innerHTML = "Z = " + az;
+            }
         }
     });
 }
