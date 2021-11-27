@@ -6,19 +6,23 @@
   <title>Box Catcher</title>
   <link id="css" rel="stylesheet" type="text/css" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js" async></script>
+  <script src="script.js"></script>
 </head>
 <body>
 
-<br>
+<span id="UA">OSName</span>
+
+<!-- <br>
 <p id="x">No Gyro found</p>
 <p id="y"></p>
 <p id="z"></p>
 <br>
-<button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
+<button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button> -->
 
-<script>
+<!-- <script>
     function getAccel(){
+      document.querySelector('#UA').innerHTML = navigator.platform;
+
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
             console.log("accelerometer permission granted");
@@ -34,8 +38,12 @@
             }
         }
     });
-}
-</script>
+    }
+
+    function getUA() {
+      document.querySelector('#UA').innerHTML = navigator.platform.indexOf("Mac");
+    }
+</script> -->
 
 <!-- <div id="container">
 
