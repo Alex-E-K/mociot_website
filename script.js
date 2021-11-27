@@ -3,7 +3,7 @@ var OSName = "Unknown OS";
 function getOSName() {
     if (navigator.userAgentData.platform.indexOf("Win") != -1) {
         OSName = "Windows";
-    } else if (navigator.userAgentData.platform.indexOf("Mac") != -1) {
+    } else if (navigator.userAgentData.platform.indexOf("mac") != -1) {
         OSName = "MacOS";
     } else if (navigator.userAgentData.platform.indexOf("X11") != -1) {
         OSName = "Unix";
@@ -15,5 +15,9 @@ function getOSName() {
         OSName = "Android";
     }
 
-    document.getElementById("UA").innerText = "Hilfe";
+    document.getElementById("UA").innerText = OSName;
 }
+
+jQuery(document).ready(function() {
+    getOSName();
+});
