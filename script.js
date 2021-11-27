@@ -27,17 +27,14 @@ function getOSName() {
 
 $(function() {
     getOSName();
-    if (OSName === 'iOS' && acclPermission === false) {
-        document.getElementById("acclPermissionBtn").style.display = "block";
-    } else {
-        document.getElementById("acclPermissionBtn").style.display = "none";
-    }
+    setPermissionButton();
 });
 
 function getAccel() {
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
             acclPermission = true;
+            setPermissionButton();
             console.log("accelerometer permission granted");
             // Do stuff here
             window.ondevicemotion = function(event) {
@@ -51,6 +48,15 @@ function getAccel() {
             }
         } else {
             acclPermission = false;
+            setPermissionButton();
         }
     });
+}
+
+function setPermissionButton() {
+    if (OSName === 'iOS' && acclPermission === false) {
+        document.getElementById("acclPermissionBtn").style.display = "block";
+    } else {
+        document.getElementById("acclPermissionBtn").style.display = "none";
+    }
 }
