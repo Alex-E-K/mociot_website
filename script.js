@@ -8,17 +8,17 @@ function getOSName() {
       iosPlatforms = ['iPhone', 'iPad', 'iPod'],
       os = null;
 
-  if (macosPlatforms.indexOf(platform) !== -1) {
-    os = 'Mac OS';
-  } else if (iosPlatforms.indexOf(platform) !== -1) {
-    os = 'iOS';
-  } else if (windowsPlatforms.indexOf(platform) !== -1) {
-    os = 'Windows';
-  } else if (/Android/.test(userAgent)) {
-    os = 'Android';
-  } else if (!os && /Linux/.test(platform)) {
-    os = 'Linux';
-  }
+    if (macosPlatforms.indexOf(platform) !== -1) {
+        os = 'Mac OS';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+        os = 'iOS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+        os = 'Windows';
+    } else if (/Android/.test(userAgent)) {
+        os = 'Android';
+    } else if (!os && /Linux/.test(platform)) {
+        os = 'Linux';
+    }
 
     document.getElementById("UA").innerText = os;
     OSName = os;
