@@ -1,4 +1,5 @@
 var OSName = "Unknown OS";
+var acclPermission = false;
 
 function getOSName() {
     var userAgent = window.navigator.userAgent,
@@ -26,4 +27,30 @@ function getOSName() {
 
 $(function() {
     getOSName();
+    if (OSName === 'iOS' && acclPermission === false) {
+        document.getElementById("acclPermissionBtn").style.display = "block";
+    } else {
+        document.getElementById("acclPermissionBtn").style.display = "none";
+    }
 });
+
+function getAccel() {
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+            acclPermission = true;
+            console.log("accelerometer permission granted");
+            // Do stuff here
+            window.ondevicemotion = function(event) {
+                var ax = event.accelerationIncludingGravity.x;
+                var ay = event.accelerationIncludingGravity.y;
+                var az = event.accelerationIncludingGravity.z;
+
+                document.querySelector('#x').innerHTML = "X = " + ax;
+                document.querySelector('#y').innerHTML = "Y = " + navigator.userAgentData.platform;
+                document.querySelector('#z').innerHTML = "Z = " + az;
+            }
+        } else {
+            acclPermission = false;
+        }
+    });
+}

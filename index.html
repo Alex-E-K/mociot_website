@@ -13,6 +13,7 @@
 <body>
 
 <div id="UA">OS</div>
+<button id="acclPermissionBtn" onclick="getAccel()">Get Accelerometer Permissions</button>
 
 <!-- <br>
 <p id="x">No Gyro found</p>
@@ -23,8 +24,6 @@
 
 <!-- <script>
     function getAccel(){
-      document.querySelector('#UA').innerHTML = navigator.platform;
-
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
             console.log("accelerometer permission granted");
@@ -40,10 +39,6 @@
             }
         }
     });
-    }
-
-    function getUA() {
-      document.querySelector('#UA').innerHTML = navigator.platform.indexOf("Mac");
     }
 </script> -->
 
