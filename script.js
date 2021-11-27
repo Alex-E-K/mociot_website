@@ -15,9 +15,9 @@ function getOSName() {
         OSName = "Android";
     }
 
-    document.getElementById("UA").innerText = 'Test';
+    document.getElementById("UA").innerText = OSName;
 }
 
-jQuery(document).ready(function() {
+jQuery(window).load(function() {
     getOSName();
 });
