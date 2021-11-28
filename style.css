@@ -4,8 +4,13 @@ html,
     height: 100%;
     margin: 0;
   }
-#game {
+  
+  #game {
     width: auto;
     height: 100%;
     margin: 0;
+  }
+
+  #acclPermissionBtn {
+      display: grid;
   }

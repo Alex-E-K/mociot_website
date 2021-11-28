@@ -21,7 +21,7 @@ function getOSName() {
         os = 'Linux';
     }
 
-    document.getElementById("UA").innerText = os;
+    //document.getElementById("UA").innerText = os;
     OSName = os;
 }
 
@@ -43,9 +43,9 @@ function getAccel() {
                 var ay = event.accelerationIncludingGravity.y;
                 var az = event.accelerationIncludingGravity.z;
 
-                document.querySelector('#x').innerHTML = "X = " + ax;
-                document.querySelector('#y').innerHTML = "Y = " + navigator.userAgentData.platform;
-                document.querySelector('#z').innerHTML = "Z = " + az;
+                // document.querySelector('#x').innerHTML = "X = " + ax;
+                // document.querySelector('#y').innerHTML = "Y = " + navigator.userAgentData.platform;
+                // document.querySelector('#z').innerHTML = "Z = " + az;
             }
         } else {
             acclPermission = false;
@@ -64,10 +64,10 @@ function setPermissionButton() {
 }
 
 function loadGame() {
-    document.getElementById("UA").style.display = "none";
+    /* document.getElementById("UA").style.display = "none";
     document.getElementById("x").style.display = "none";
     document.getElementById("y").style.display = "none";
     document.getElementById("z").style.display = "none";
-    document.getElementById("game").innerHTML='<object type="text/html" data="game.html"></object>';
+    document.getElementById("game").innerHTML='<object type="text/html" data="game.html"></object>'; */
     //$('#game').load('game.html');
 }
