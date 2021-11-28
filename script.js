@@ -26,6 +26,7 @@ function getOSName() {
 }
 
 $(function() {
+    document.getElementById("game").style.display = "block";
     getOSName();
     setPermissionButton();
 });
@@ -58,5 +59,10 @@ function setPermissionButton() {
         document.getElementById("acclPermissionBtn").style.display = "block";
     } else {
         document.getElementById("acclPermissionBtn").style.display = "none";
+        loadGame();
     }
+}
+
+function loadGame() {
+    $('#game').load('game.html');
 }
