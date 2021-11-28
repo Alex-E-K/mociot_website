@@ -64,5 +64,10 @@ function setPermissionButton() {
 }
 
 function loadGame() {
-    $('#game').load('game.html');
+    document.getElementById("UA").style.display = "none";
+    document.getElementById("x").style.display = "none";
+    document.getElementById("y").style.display = "none";
+    document.getElementById("z").style.display = "none";
+    document.getElementById("game").innerHTML='<object type="text/html" data="game.html"></object>';
+    //$('#game').load('game.html');
 }
