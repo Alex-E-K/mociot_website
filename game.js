@@ -31,22 +31,22 @@ life_span.text(life);
 
 $(function() {
     the_game = function() {
-      if (check_egg_hits_floor(square1) || check_egg_hits_basket(square1)) {
-        set_egg_to_initial_position(square1);
+      if (check_square_hits_floor(square1) || check_square_hits_basket(square1)) {
+        set_square_to_initial_position(square1);
       } else {
-        egg_down(square1);
+        square_down(square1);
       }
     
-      if (check_egg_hits_floor(square2) || check_egg_hits_basket(square2)) {
-        set_egg_to_initial_position(square2);
+      if (check_square_hits_floor(square2) || check_square_hits_basket(square2)) {
+        set_square_to_initial_position(square2);
       } else {
-        egg_down(square2);
+        square_down(square2);
       }
     
-      if (check_egg_hits_floor(square3) || check_egg_hits_basket(square3)) {
-        set_egg_to_initial_position(square3);
+      if (check_square_hits_floor(square3) || check_square_hits_basket(square3)) {
+        set_square_to_initial_position(square3);
       } else {
-        egg_down(square3);
+        square_down(square3);
       }
     
       if (life > 0) {
@@ -100,7 +100,7 @@ $(function() {
     life_span.text(life);
     }
     
-    function check_square_hits_basket(egg) {
+    function check_square_hits_basket(square) {
     if (collision(square, basket)) {
       square_top = parseInt(square.css("top"));
       if (square_top < basket_top) {
