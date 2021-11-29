@@ -68,7 +68,7 @@ $(function() {
     window.addEventListener('devicemotion', handleMotion, true);
 
     function handleMotion(e) {
-        var move = e.accelerationIncludingGravity.x;
+        var move = basket.css("left") + (parseInt(e.accelerationIncludingGravity.x) * 5);
         /* if (move < 0) {
             var pos = basket.css("left") - 20;
             if (pos < 0) {
@@ -82,7 +82,7 @@ $(function() {
             }
             basket.css("left", pos);
         }  */
-        basket.css("left", 100);
+        basket.css("left", move);
         score_span.text(e.accelerationIncludingGravity.x);
     }
     
