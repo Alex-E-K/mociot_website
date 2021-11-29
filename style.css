@@ -11,15 +11,6 @@ html,
     margin: 0;
   }
 
-  .center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-
   #acclPermissionBtn {
       display: grid;
       justify-content: center;
