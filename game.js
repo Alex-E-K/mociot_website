@@ -64,6 +64,12 @@ $(function() {
     $(document).on("mousemove", function(e) {
     basket.css("left", e.pageX);
     });
+
+    window.addEventListener('deviceorientation', handleMotion);
+
+    function handleMotion(e) {
+        score_span.text(e.accelerationIncludingGravity.x);
+    }
     
     function square_down(square) {
     square_current_position = parseInt(square.css("top"));
