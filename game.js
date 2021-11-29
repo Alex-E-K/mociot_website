@@ -69,7 +69,7 @@ $(function() {
 
     function handleMotion(e) {
         var move = e.accelerationIncludingGravity.x;
-        if (move < 0) {
+        /* if (move < 0) {
             var pos = basket.css("left") - 20;
             if (pos < 0) {
                 pos = 0;
@@ -81,8 +81,8 @@ $(function() {
                 pos = visualViewport.width;
             }
             basket.css("left", pos);
-        } 
-        
+        }  */
+        basket.css("left", basket.css("left") + move);
         //score_span.text(e.accelerationIncludingGravity.x);
     }
     
