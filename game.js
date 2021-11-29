@@ -82,7 +82,7 @@ $(function() {
             }
             basket.css("left", pos);
         }  */
-        basket.css("left", basket.css("left") + move);
+        basket.css("left", 100);
         score_span.text(e.accelerationIncludingGravity.x);
     }
     
