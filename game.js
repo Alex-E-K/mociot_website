@@ -65,7 +65,7 @@ $(function() {
     basket.css("left", e.pageX);
     });
 
-    window.addEventListener('deviceorientation', handleMotion);
+    window.addEventListener('devicemotion', handleMotion, true);
 
     function handleMotion(e) {
         score_span.text(e.accelerationIncludingGravity.x);
