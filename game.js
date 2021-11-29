@@ -68,7 +68,8 @@ $(function() {
     window.addEventListener('devicemotion', handleMotion, true);
 
     function handleMotion(e) {
-        score_span.text(e.accelerationIncludingGravity.x);
+        basket.css("left", basket.css("left") + e.accelerationIncludingGravity.x);
+        //score_span.text(e.accelerationIncludingGravity.x);
     }
     
     function square_down(square) {
