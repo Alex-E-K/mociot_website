@@ -68,7 +68,7 @@ $(function() {
     window.addEventListener('devicemotion', handleMotion, true);
 
     function handleMotion(e) {
-        var move = basket.css("left") + (parseInt(e.accelerationIncludingGravity.x) * 5);
+        var move = basket.css("left") + (parseInt(e.accelerationIncludingGravity.x) * 30);
         /* if (move < 0) {
             var pos = basket.css("left") - 20;
             if (pos < 0) {
