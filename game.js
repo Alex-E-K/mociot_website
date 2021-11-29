@@ -63,6 +63,7 @@ $(function() {
     
     $(document).on("mousemove", function(e) {
     basket.css("left", e.pageX);
+    life_span.text(e.pageX);
     });
 
     window.addEventListener('devicemotion', handleMotion, true);
