@@ -55,12 +55,14 @@ function getAccel() {
 function setPermissionButton() {
     if (OSName === 'iOS' && acclPermission === false) {
         document.getElementById("accl").style.display = "block";
-        //document.getElementById("acclTop").style.display = "block";
+        document.getElementById("ifIos").style.display = "block";
+        document.getElementById("ifRefused").style.display = "block";
         document.getElementById("acclPermissionBtn").style.display = "block";
     } else {
         document.getElementById("acclPermissionBtn").style.display = "none";
+        document.getElementById("ifRefused").style.display = "none";
+        document.getElementById("ifIos").style.display = "none";
         document.getElementById("accl").style.display = "none";
-        //document.getElementById("acclTop").style.display = "none";
         loadGame();
     }
 }
