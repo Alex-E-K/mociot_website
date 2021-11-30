@@ -15,7 +15,6 @@ html,
     height: auto;
     width: auto;
     margin: 5%;
-    padding-top: 5%;
     display: grid;
     justify-content: center;
   }
