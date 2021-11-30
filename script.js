@@ -35,16 +35,6 @@ function getAccel() {
             acclPermission = true;
             setPermissionButton();
             console.log("accelerometer permission granted");
-            // Do stuff here
-            /* window.ondevicemotion = function(event) {
-                var ax = event.accelerationIncludingGravity.x;
-                var ay = event.accelerationIncludingGravity.y;
-                var az = event.accelerationIncludingGravity.z;
-
-                // document.querySelector('#x').innerHTML = "X = " + ax;
-                // document.querySelector('#y').innerHTML = "Y = " + navigator.userAgentData.platform;
-                // document.querySelector('#z').innerHTML = "Z = " + az;
-            } */
         } else {
             acclPermission = false;
             setPermissionButton();

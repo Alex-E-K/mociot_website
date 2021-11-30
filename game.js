@@ -1,3 +1,4 @@
+var OSName = "Unknown OS";
 var basket = $("#basket"),
 container = $("#container"),
 box = $(".box"),
@@ -28,8 +29,30 @@ basket_top = container_height - basket_height,
 bullseye_num = 0;
 life_span.text(life);
 
+function getOSName() {
+  var userAgent = window.navigator.userAgent,
+    platform = window.navigator.platform,
+    macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+    windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+    iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+    os = null;
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+      os = 'Mac OS';
+  } else if (iosPlatforms.indexOf(platform) !== -1) {
+      os = 'iOS';
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+      os = 'Windows';
+  } else if (/Android/.test(userAgent)) {
+      os = 'Android';
+  } else if (!os && /Linux/.test(platform)) {
+      os = 'Linux';
+  }
+  OSName = os;
+}
 
 $(function() {
+    getOSName();
     the_game = function() {
       if (check_square_hits_floor(square1) || check_square_hits_basket(square1)) {
         set_square_to_initial_position(square1);
@@ -69,22 +92,14 @@ $(function() {
     window.addEventListener('devicemotion', handleMotion, true);
 
     function handleMotion(e) {
-        var move = parseInt(basket.css("left")) + (parseInt(e.accelerationIncludingGravity.x) * 5);
-        /* if (move < 0) {
-            var pos = basket.css("left") - 20;
-            if (pos < 0) {
-                pos = 0;
-            }
-            basket.css("left", pos);
-        } else if (move > 0) {
-            var pos = basket.css("left") + 20;
-            if (pos > visualViewport.width) {
-                pos = visualViewport.width;
-            }
-            basket.css("left", pos);
-        }  */
-        basket.css("left", move);
-        score_span.text(move);
+      var move;
+      if (OSName === "iOS") {
+        move = parseInt(basket.css("left")) + (parseInt(e.accelerationIncludingGravity.x) * 2);
+      } else {
+        move = parseInt(basket.css("left")) + (parseInt(e.accelerationIncludingGravity.x) * (-2));
+      }
+      basket.css("left", move);
+      score_span.text(move);
     }
     
     function square_down(square) {
