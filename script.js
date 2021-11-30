@@ -20,8 +20,6 @@ function getOSName() {
     } else if (!os && /Linux/.test(platform)) {
         os = 'Linux';
     }
-
-    //document.getElementById("UA").innerText = os;
     OSName = os;
 }
 
@@ -38,7 +36,7 @@ function getAccel() {
             setPermissionButton();
             console.log("accelerometer permission granted");
             // Do stuff here
-            window.ondevicemotion = function(event) {
+            /* window.ondevicemotion = function(event) {
                 var ax = event.accelerationIncludingGravity.x;
                 var ay = event.accelerationIncludingGravity.y;
                 var az = event.accelerationIncludingGravity.z;
@@ -46,7 +44,7 @@ function getAccel() {
                 // document.querySelector('#x').innerHTML = "X = " + ax;
                 // document.querySelector('#y').innerHTML = "Y = " + navigator.userAgentData.platform;
                 // document.querySelector('#z').innerHTML = "Z = " + az;
-            }
+            } */
         } else {
             acclPermission = false;
             setPermissionButton();
@@ -57,19 +55,16 @@ function getAccel() {
 function setPermissionButton() {
     if (OSName === 'iOS' && acclPermission === false) {
         document.getElementById("accl").style.display = "block";
+        document.getElementById("acclTop").style.display = "block";
         document.getElementById("acclPermissionBtn").style.display = "block";
     } else {
         document.getElementById("acclPermissionBtn").style.display = "none";
         document.getElementById("accl").style.display = "none";
+        document.getElementById("acclTop").style.display = "none";
         loadGame();
     }
 }
 
 function loadGame() {
-    /* document.getElementById("UA").style.display = "none";
-    document.getElementById("x").style.display = "none";
-    document.getElementById("y").style.display = "none";
-    document.getElementById("z").style.display = "none"; */
     document.getElementById("game").innerHTML='<object type="text/html" data="game.html"></object>';
-    //$('#game').load('game.html');
 }
