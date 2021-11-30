@@ -86,7 +86,7 @@ $(function() {
     
     $(document).on("mousemove", function(e) {
     basket.css("left", e.pageX);
-    life_span.text(e.pageX);
+    //life_span.text(e.pageX);
     });
 
     window.addEventListener('devicemotion', handleMotion, true);
@@ -99,7 +99,7 @@ $(function() {
         move = parseInt(basket.css("left")) + (parseInt(e.accelerationIncludingGravity.x) * (-2));
       }
       basket.css("left", move);
-      score_span.text(move);
+      //score_span.text(move);
     }
     
     function square_down(square) {

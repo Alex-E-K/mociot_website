@@ -11,7 +11,7 @@ html,
     width: 100%;
     position: relative;
     overflow: hidden;
-    background-color: #31b6ce;
+    background-color: white;
   }
   
   #score_help {
@@ -30,10 +30,10 @@ html,
   
   .box {
     position: absolute;
-    height: 15%;
-    width: 8%;
+    height: 10vw;
+    width: 10vw;
     top: 10%;
-    background: url("https://raw.githubusercontent.com/arshadasgar/arshadasgar.github.io/master/eggs/hen-right.png");
+    background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 100;
@@ -44,19 +44,19 @@ html,
   }
   
   #box2 {
-    left: 40%;
+    left:45%;
   }
   
   #box3 {
-    left: 60%;
+    left: 70%;
   }
   
   .square {
     position: absolute;
     top: 18%;
-    height: 5%;
-    width: 2%;
-    background-color: #fff;
+    height: 5vw;
+    width: 5vw;
+    background-color: red;
     border-radius: 50%;
     z-index: 99;
   }
@@ -66,11 +66,11 @@ html,
   }
   
   #square2 {
-    left: calc(40% + 8%/2 - 2%/2);
+    left: calc(45% + 8%/2 - 2%/2);
   }
   
   #square3 {
-    left: calc(60% + 8%/2 - 2%/2);
+    left: calc(70% + 8%/2 - 2%/2);
   }
   
   .bullseye {
@@ -78,23 +78,23 @@ html,
     position: absolute;
     bottom: 0px;
     height: 7%;
-    width: 7%;
-    background: url("https://raw.githubusercontent.com/arshadasgar/arshadasgar.github.io/master/eggs/bullseye1.png");
+    width: 7vw;
+    background-color: darkred;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 11;
   }
   
   #bullseye1 {
-    left: calc(20% + 8%/2 - 7%/2);
+    left: calc(20% + 8%/2 - 2%/2);
   }
   
   #bullseye2 {
-    left: calc(40% + 8%/2 - 7%/2);
+    left: calc(45% + 8%/2 - 2%/2);
   }
   
   #bullseye3 {
-    left: calc(60% + 8%/2 - 7%/2);
+    left: calc(70% + 8%/2 - 2%/2);
   }
   
   #floor {
@@ -110,8 +110,8 @@ html,
     height: 100px;
     width: 85px;
     position: absolute;
-    bottom: 5px;
-    background: url("https://raw.githubusercontent.com/arshadasgar/arshadasgar.github.io/master/eggs/basket.png");
+    bottom: 10px;
+    background: url("basket.png");
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
@@ -120,7 +120,7 @@ html,
   
   #score_1 {
     position: absolute;
-    color: #424242;
+    color: #4DD306;
     font-size: 30px;
     top: 45%;
     left: 30%;
@@ -131,8 +131,8 @@ html,
     position: absolute;
     height: 10%;
     width: 100%;
-    background-color: fuchsia;
-    color: white;
+    background-color: lightblue;
+    color: black;
     top: 40%;
     font-size: 35px;
     display: none;
