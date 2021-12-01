@@ -23,7 +23,7 @@ function getOSName() {
     OSName = os;
 }
 
-document.addEventListener("orientationchange", function(event){
+window.addEventListener("orientationchange", function(event){
     switch(window.orientation) 
     {  
         case -90: case 90:
