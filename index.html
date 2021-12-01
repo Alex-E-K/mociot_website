@@ -5,42 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Box Catcher</title>
   <link id="css" rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
   <script src="script.js" async></script>
 </head>
 <body>
-
-<div id="container">
-
-    <div id="score_help"> Score:
-      <span id="score">0</span> | Life:
-      <span id="life"></span> | Use mouse or gyro sensor to control
-    </div>
-  
-    <div id="branch"></div>
-  
-    <div id="boxSpawner1" class="boxSpawner"></div>
-    <div id="boxSpawner2" class="boxSpawner"></div>
-    <div id="boxSpawner3" class="boxSpawner"></div>
-  
-    <div id="box1" class="box" data-bullseye='1'></div>
-    <div id="box2" class="box" data-bullseye='2'></div>
-    <div id="box3" class="box" data-bullseye='3'></div>
-  
-    <div id="bullseye1" class="bullseye"></div>
-    <div id="bullseye2" class="bullseye"></div>
-    <div id="bullseye3" class="bullseye"></div>
-  
-    <div id="basket">
-      <span id="score_1"></span>
-    </div>
-  
-    <div id="floor"></div>
-  
-    <button id="restart">Restart</button>
-  
+  <div id="accl" class="container">
+    <p id="ifIos">You are using iOS. In order to be able to play the game, authorization to use the motion sensor is mandatory!</p>
+    <p id="ifRefused">If you should refuse, you have to clear the browser cache in order to be asked for the authorization again.</p>
+    <button id="acclPermissionBtn" onclick="getAccel()">Get Accelerometer Permissions</button>
   </div>
 
+<div id="game"></div>
 
 </body>
 </html>

@@ -1,0 +1,28 @@
+html,
+  body, div, object {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  
+  #game {
+    width: auto;
+    height: 100%;
+    margin: 0;
+  }
+
+  .container {
+    height: auto;
+    width: auto;
+    margin: 5%;
+    display: grid;
+    justify-content: center;
+  }
+
+  button {
+    margin: auto;
+  }
+
+  #acclPermissionBtn {
+      display: grid;
+  }
