@@ -23,6 +23,19 @@ function getOSName() {
     OSName = os;
 }
 
+document.addEventListener("orientationchange", function(event){
+    switch(window.orientation) 
+    {  
+        case -90: case 90:
+            /* Device is in landscape mode */
+            document.getElementById("game").innerHTML='<object type="text/html" data="error.html"></object>';
+            break; 
+        default:
+            /* Device is in portrait mode */
+            loadGame();
+    }
+});
+
 $(function() {
     document.getElementById("game").style.display = "block";
     getOSName();
