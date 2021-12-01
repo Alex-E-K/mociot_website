@@ -98,6 +98,13 @@ $(function() {
       } else {
         move = parseInt(basket.css("left")) + (parseInt(e.accelerationIncludingGravity.x) * (-2));
       }
+
+      if (move > window.innerWidth) {
+        move = window.innerWidth;
+      } else if (move < 0) {
+        move = 0;
+      }
+      
       basket.css("left", move);
       //score_span.text(move);
     }
